@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Count-result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="padding-top:5em;">
+<div class="container">
+    <form action="{% url 'index_page' %}">
+        {% csrf_token %}
+        <input type="submit" value="Back" name="back" class="btn btn-primary">
+    </form>
+    <br>
+    <h1 class="text-success">There are {{ words }} words in your text.</h1>
+    <br>
+    <h3 class="text-warning">Your original text is:</h3><br>
+    <p><h6 class="text-secondary">{{ fulltext }}</h6></p><br>
+    <h5 class="text-info">Word that appeared many times:
+        {% for word in most %}
+            <h6>{{ word }}</h6>
+        {% endfor %}
+    </h5>
+</div>
+</body>
+</html>

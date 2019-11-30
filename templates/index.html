@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home-page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body style="background-image: url('https://reflectionsbyrebecca.files.wordpress.com/2015/05/girl-with-raining-words.jpg');background-repeat: no-repeat;background-position: center;background-size: cover;height:100%;">
+<center>
+    <div class="container" style="margin-top:10em;">
+        <h1 class="text-danger">WORD COUNT APP</h1><br>
+        <a href="{% url 'aboutus_page' %}" class="btn btn-success">About this app</a>
+    </div>
+    <br>
+    <form action="{% url 'count_page' %}">
+
+        <textarea rows="12" cols="50" placeholder="Type your text in here" name="full_text" required=""> </textarea><br>
+        <input type="submit" name="count" value="Count" class="btn btn-success">
+    </form>
+
+</center>
+</body>
+</html>
